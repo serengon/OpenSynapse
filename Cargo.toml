@@ -1,5 +1,9 @@
 [workspace]
-members = ["crates/openrazer-adapter"]
+members = [
+    "crates/opensynapse-core",
+    "crates/openrazer-adapter",
+    "crates/foreground-watcher-x11",
+]
 resolver = "2"
 
 [workspace.package]

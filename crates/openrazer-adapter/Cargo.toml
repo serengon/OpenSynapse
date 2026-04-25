@@ -8,11 +8,17 @@ rust-version.workspace = true
 description = "Read-only adapter over openrazer DBus, used by OpenSynapse."
 
 [dependencies]
+opensynapse-core = { path = "../opensynapse-core" }
 zbus = { version = "5", default-features = false, features = ["tokio"] }
 tokio = { version = "1", features = ["macros", "rt"] }
+async-trait = "0.1"
 thiserror = "2"
 anyhow = "1"
 
 [[bin]]
 name = "openrazer-probe"
 path = "src/bin/openrazer-probe.rs"
+
+[[bin]]
+name = "openrazer-apply"
+path = "src/bin/openrazer-apply.rs"

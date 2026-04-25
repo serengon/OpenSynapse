@@ -1,9 +1,9 @@
 use anyhow::Result;
-use openrazer_adapter::Adapter;
+use openrazer_adapter::OpenrazerAdapter;
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<()> {
-    let adapter = Adapter::connect().await?;
+    let adapter = OpenrazerAdapter::connect().await?;
     let devices = adapter.list_devices().await?;
 
     if devices.is_empty() {
