@@ -33,3 +33,36 @@ pub trait Battery {
     #[zbus(name = "isCharging")]
     fn is_charging(&self) -> zbus::Result<bool>;
 }
+
+#[proxy(
+    interface = "razer.device.lighting.chroma",
+    default_service = "org.razer"
+)]
+pub trait Chroma {
+    #[zbus(name = "setStatic")]
+    fn set_static(&self, r: u8, g: u8, b: u8) -> zbus::Result<()>;
+
+    #[zbus(name = "setBreathSingle")]
+    fn set_breath_single(&self, r: u8, g: u8, b: u8) -> zbus::Result<()>;
+
+    #[zbus(name = "setSpectrum")]
+    fn set_spectrum(&self) -> zbus::Result<()>;
+
+    #[zbus(name = "setWave")]
+    fn set_wave(&self, direction: i32) -> zbus::Result<()>;
+
+    #[zbus(name = "setReactive")]
+    fn set_reactive(&self, r: u8, g: u8, b: u8, time: u8) -> zbus::Result<()>;
+
+    #[zbus(name = "setNone")]
+    fn set_none(&self) -> zbus::Result<()>;
+}
+
+#[proxy(
+    interface = "razer.device.lighting.brightness",
+    default_service = "org.razer"
+)]
+pub trait Brightness {
+    #[zbus(name = "setBrightness")]
+    fn set_brightness(&self, value: f64) -> zbus::Result<()>;
+}
