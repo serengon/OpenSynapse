@@ -3,6 +3,7 @@ members = [
     "crates/opensynapse-core",
     "crates/openrazer-adapter",
     "crates/foreground-watcher-x11",
+    "crates/opensynapse-daemon",
 ]
 resolver = "2"
 

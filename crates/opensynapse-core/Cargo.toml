@@ -7,7 +7,12 @@ repository.workspace = true
 rust-version.workspace = true
 description = "Traits, specs y tipos compartidos por todos los adapters de OpenSynapse."
 
+[features]
+default = ["serde"]
+serde = ["dep:serde"]
+
 [dependencies]
 async-trait = "0.1"
 thiserror = "2"
 futures-core = "0.3"
+serde = { version = "1", features = ["derive"], optional = true }
